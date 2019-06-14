@@ -39,7 +39,7 @@ class TestBasics(unittest.TestCase):
             self.assertTrue(os.path.exists(self.pjoin("etc/init/foo.conf")), "Upstart configuration file not created.")
         elif Provider == robot_upstart.providers.Systemd:
             self.assertTrue(os.path.exists(self.pjoin("etc/systemd/system/multi-user.target.wants/foo.service")),
-                        "Systemd configuration file not created.")
+                            "Systemd configuration file not created.")
 
         self.assertEqual(0, subprocess.call(["bash", "-n", self.pjoin("usr/sbin/foo-start")]),
                          "Start script not valid bash syntax.")
